@@ -312,13 +312,25 @@ export default function Home() {
                   return parseInt(b.floor) - parseInt(a.floor); // Sort descending (15F at top, 8F at bottom)
                 }).map((floor) => {
                 const lootPool = floorLootPools.find(f => f.floor === floor.floor);
-                const isSelected = selectedFloor === floor.floor;
+                // Auto-expand if search query matches items in this floor
+                const floorItems = getFloorItems(floor.floor);
+                const hasMatchingItem = searchQuery.trim() && floorItems.some(item =>
+                  item.name.toLowerCase().includes(searchQuery.toLowerCase())
+                );
+                const isSelected = hasMatchingItem || selectedFloor === floor.floor;
 
                 return (
                   <div
                     key={floor.floor}
-                    onClick={() => setSelectedFloor(isSelected ? null : floor.floor)}
-                    className={`p-3 bg-gradient-to-r from-[var(--background)] to-[var(--card-bg)] border rounded-lg transition-all cursor-pointer group hover:scale-[1.01] ${
+                    onClick={() => {
+                      // If there's a search query, prevent manual toggling
+                      if (searchQuery.trim()) return;
+                      // Otherwise allow normal toggle
+                      setSelectedFloor(selectedFloor === floor.floor ? null : floor.floor);
+                    }}
+                    className={`p-3 bg-gradient-to-r from-[var(--background)] to-[var(--card-bg)] border rounded-lg transition-all ${
+                      searchQuery.trim() ? 'cursor-default' : 'cursor-pointer'
+                    } group hover:scale-[1.01] ${
                       isSelected ? 'border-red-600 bg-red-950/20' : 'border-[var(--border)] hover:border-red-600/50'
                     }`}
                   >
@@ -343,6 +355,20 @@ export default function Home() {
                                   colorClasses = 'bg-orange-600/20 text-orange-400 border-orange-600/30';
                                 } else if (tag === 'Building Material') {
                                   colorClasses = 'bg-slate-600/20 text-slate-400 border-slate-600/30';
+                                } else if (tag === 'Electronics') {
+                                  colorClasses = 'bg-cyan-600/20 text-cyan-400 border-cyan-600/30';
+                                } else if (tag === 'Houseware') {
+                                  colorClasses = 'bg-purple-600/20 text-purple-400 border-purple-600/30';
+                                } else if (tag === 'Beauty') {
+                                  colorClasses = 'bg-pink-600/20 text-pink-400 border-pink-600/30';
+                                } else if (tag === 'High Value Floor') {
+                                  colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
+                                } else if (tag === 'Boss') {
+                                  colorClasses = 'bg-red-600/20 text-red-400 border-red-600/30';
+                                } else if (tag === 'Safes') {
+                                  colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
+                                } else if (tag === 'Safes') {
+                                  colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
                                 }
 
                                 return (
@@ -406,16 +432,23 @@ export default function Home() {
                           <div>
                             <p className="text-[10px] text-gray-500 mb-2 font-bold">DROPS:</p>
                             <div className="flex flex-wrap gap-2">
-                              {getFloorItems(floor.floor).map((item, idx) => (
-                                <span
-                                  key={idx}
-                                  className={`px-2 py-1 bg-black/30 rounded text-[10px] font-semibold ${
-                                    item.questItem ? 'text-yellow-400' : 'text-gray-300'
-                                  }`}
-                                >
-                                  {item.name}{item.questItem && ' ★'}
-                                </span>
-                              ))}
+                              {getFloorItems(floor.floor).map((item, idx) => {
+                                const isHighlighted = searchQuery.trim() && item.name.toLowerCase().includes(searchQuery.toLowerCase());
+                                return (
+                                  <span
+                                    key={idx}
+                                    className={`px-2 py-1 rounded text-[10px] font-semibold transition-all ${
+                                      isHighlighted
+                                        ? 'bg-red-600/40 text-red-200 ring-2 ring-red-500/50 shadow-lg shadow-red-500/30'
+                                        : item.questItem
+                                        ? 'bg-black/30 text-yellow-400'
+                                        : 'bg-black/30 text-gray-300'
+                                    }`}
+                                  >
+                                    {item.name}{item.questItem && ' ★'}
+                                  </span>
+                                );
+                              })}
                             </div>
                           </div>
                         )}
@@ -444,13 +477,25 @@ export default function Home() {
                   return bNum - aNum; // Sort descending (7F at top, B1F at bottom)
                 }).map((floor) => {
                 const lootPool = floorLootPools.find(f => f.floor === floor.floor);
-                const isSelected = selectedFloor === floor.floor;
+                // Auto-expand if search query matches items in this floor
+                const floorItems = getFloorItems(floor.floor);
+                const hasMatchingItem = searchQuery.trim() && floorItems.some(item =>
+                  item.name.toLowerCase().includes(searchQuery.toLowerCase())
+                );
+                const isSelected = hasMatchingItem || selectedFloor === floor.floor;
 
                 return (
                   <div
                     key={floor.floor}
-                    onClick={() => setSelectedFloor(isSelected ? null : floor.floor)}
-                    className={`p-3 bg-gradient-to-r from-[var(--background)] to-[var(--card-bg)] border rounded-lg transition-all cursor-pointer group hover:scale-[1.01] ${
+                    onClick={() => {
+                      // If there's a search query, prevent manual toggling
+                      if (searchQuery.trim()) return;
+                      // Otherwise allow normal toggle
+                      setSelectedFloor(selectedFloor === floor.floor ? null : floor.floor);
+                    }}
+                    className={`p-3 bg-gradient-to-r from-[var(--background)] to-[var(--card-bg)] border rounded-lg transition-all ${
+                      searchQuery.trim() ? 'cursor-default' : 'cursor-pointer'
+                    } group hover:scale-[1.01] ${
                       isSelected ? 'border-red-600 bg-red-950/20' : 'border-[var(--border)] hover:border-red-600/50'
                     }`}
                   >
@@ -475,6 +520,20 @@ export default function Home() {
                                   colorClasses = 'bg-orange-600/20 text-orange-400 border-orange-600/30';
                                 } else if (tag === 'Building Material') {
                                   colorClasses = 'bg-slate-600/20 text-slate-400 border-slate-600/30';
+                                } else if (tag === 'Electronics') {
+                                  colorClasses = 'bg-cyan-600/20 text-cyan-400 border-cyan-600/30';
+                                } else if (tag === 'Houseware') {
+                                  colorClasses = 'bg-purple-600/20 text-purple-400 border-purple-600/30';
+                                } else if (tag === 'Beauty') {
+                                  colorClasses = 'bg-pink-600/20 text-pink-400 border-pink-600/30';
+                                } else if (tag === 'High Value Floor') {
+                                  colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
+                                } else if (tag === 'Boss') {
+                                  colorClasses = 'bg-red-600/20 text-red-400 border-red-600/30';
+                                } else if (tag === 'Safes') {
+                                  colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
+                                } else if (tag === 'Safes') {
+                                  colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
                                 }
 
                                 return (
@@ -538,16 +597,23 @@ export default function Home() {
                           <div>
                             <p className="text-[10px] text-gray-500 mb-2 font-bold">DROPS:</p>
                             <div className="flex flex-wrap gap-2">
-                              {getFloorItems(floor.floor).map((item, idx) => (
-                                <span
-                                  key={idx}
-                                  className={`px-2 py-1 bg-black/30 rounded text-[10px] font-semibold ${
-                                    item.questItem ? 'text-yellow-400' : 'text-gray-300'
-                                  }`}
-                                >
-                                  {item.name}{item.questItem && ' ★'}
-                                </span>
-                              ))}
+                              {getFloorItems(floor.floor).map((item, idx) => {
+                                const isHighlighted = searchQuery.trim() && item.name.toLowerCase().includes(searchQuery.toLowerCase());
+                                return (
+                                  <span
+                                    key={idx}
+                                    className={`px-2 py-1 rounded text-[10px] font-semibold transition-all ${
+                                      isHighlighted
+                                        ? 'bg-red-600/40 text-red-200 ring-2 ring-red-500/50 shadow-lg shadow-red-500/30'
+                                        : item.questItem
+                                        ? 'bg-black/30 text-yellow-400'
+                                        : 'bg-black/30 text-gray-300'
+                                    }`}
+                                  >
+                                    {item.name}{item.questItem && ' ★'}
+                                  </span>
+                                );
+                              })}
                             </div>
                           </div>
                         )}

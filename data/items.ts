@@ -56,6 +56,12 @@ export type ItemTag =
   | 'Casino Supply'
   | 'Vehicle Part'
   | 'Building Material'
+  | 'Electronics'
+  | 'Houseware'
+  | 'Beauty'
+  | 'High Value Floor'
+  | 'Boss'
+  | 'Safes'
   | 'Office'
   | 'Construction'
   | 'Shopping'
@@ -667,6 +673,401 @@ export const itemsDatabase: Item[] = [
     tags: ['Building Material'],
     dropFloors: ['5F', '10F'],
     description: 'Wooden construction board'
+  },
+  // Electronics - Office Floor (6F)
+  {
+    id: 'electronic_scrap',
+    name: 'Electronic Scrap',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Salvaged electronic components'
+  },
+  {
+    id: 'payment_terminal',
+    name: 'Payment Terminal',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Uncommon',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Electronic payment device'
+  },
+  {
+    id: 'electrical_wire',
+    name: 'Electrical Wire',
+    category: 'Material',
+    subcategory: 'Crafting Only',
+    rarity: 'Common',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Used for electrical crafting'
+  },
+  {
+    id: 'electric_drill',
+    name: 'Electric Drill',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Uncommon',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Power tool for drilling'
+  },
+  {
+    id: 'stand_microphone',
+    name: 'Stand Microphone',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Uncommon',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Professional microphone with stand'
+  },
+  {
+    id: 'headset',
+    name: 'Headset',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Audio headset device'
+  },
+  {
+    id: 'microphone',
+    name: 'Microphone',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Audio recording device'
+  },
+  {
+    id: 'camera',
+    name: 'Camera',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Uncommon',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Electronic camera device'
+  },
+  {
+    id: 'golden_microphone',
+    name: 'Golden Microphone',
+    category: 'Material',
+    subcategory: 'Rare Find',
+    rarity: 'Rare',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Valuable golden microphone'
+  },
+  {
+    id: 'blueprints',
+    name: 'Blueprints',
+    category: 'Material',
+    subcategory: 'Crafting Only',
+    rarity: 'Uncommon',
+    tags: ['Electronics'],
+    dropFloors: ['4F', '6F', '9F'],
+    description: 'Technical design blueprints',
+    questItem: true
+  },
+  // Beauty - Broadcasting Stations (4F, 9F)
+  {
+    id: 'lipstick',
+    name: 'Lipstick',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Beauty'],
+    dropFloors: ['4F', '9F'],
+    description: 'Cosmetic lip color'
+  },
+  {
+    id: 'perfume',
+    name: 'Perfume',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Uncommon',
+    tags: ['Beauty'],
+    dropFloors: ['4F', '9F'],
+    description: 'Fragrance spray'
+  },
+  {
+    id: 'bb_cream',
+    name: 'BB Cream',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Beauty'],
+    dropFloors: ['4F', '9F'],
+    description: 'Beauty balm cream'
+  },
+  {
+    id: 'skin_care_cream',
+    name: 'Skin Care Cream',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Beauty'],
+    dropFloors: ['4F', '9F'],
+    description: 'Facial moisturizing cream'
+  },
+  // Houseware - Shopping Centers (1F, 2F)
+  {
+    id: 'water_based_marker',
+    name: 'Water-Based Marker',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Writing marker'
+  },
+  {
+    id: 'detergent',
+    name: 'Detergent',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Cleaning detergent'
+  },
+  {
+    id: 'mold_remover',
+    name: 'Mold Remover',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Mold cleaning solution'
+  },
+  {
+    id: 'bleach',
+    name: 'Bleach',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Cleaning bleach'
+  },
+  {
+    id: 'hanger',
+    name: 'Hanger',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Clothing hanger'
+  },
+  {
+    id: 'chalk',
+    name: 'Chalk',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Writing chalk'
+  },
+  {
+    id: 'file_folder',
+    name: 'File Folder',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Document folder'
+  },
+  {
+    id: 'pencil',
+    name: 'Pencil',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Writing pencil'
+  },
+  {
+    id: 'diary',
+    name: 'Diary',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Uncommon',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Personal diary'
+  },
+  {
+    id: 'document',
+    name: 'Document',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Paper document'
+  },
+  {
+    id: 'scissors',
+    name: 'Scissors',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Cutting scissors'
+  },
+  {
+    id: 'toilet_paper',
+    name: 'Toilet Paper',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Bathroom tissue'
+  },
+  {
+    id: 'shampoo',
+    name: 'Shampoo',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Hair cleaning product'
+  },
+  {
+    id: 'conditioner',
+    name: 'Conditioner',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Hair conditioner'
+  },
+  {
+    id: 'body_wash',
+    name: 'Body Wash',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Body cleaning soap'
+  },
+  {
+    id: 'toothbrush',
+    name: 'Toothbrush',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Dental hygiene tool'
+  },
+  {
+    id: 'toothpaste',
+    name: 'Toothpaste',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Dental cleaning paste'
+  },
+  {
+    id: 'soap',
+    name: 'Soap',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Cleaning soap'
+  },
+  {
+    id: 'box_cutter',
+    name: 'Box Cutter',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Uncommon',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Utility cutting tool'
+  },
+  {
+    id: 'packing_tape',
+    name: 'Packing Tape',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Adhesive packing tape'
+  },
+  {
+    id: 'black_market_ledger',
+    name: 'Black Market Ledger',
+    category: 'Material',
+    subcategory: 'Rare Find',
+    rarity: 'Rare',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Suspicious record book',
+    questItem: true
+  },
+  {
+    id: 'torn_diary',
+    name: 'Torn Diary',
+    category: 'Material',
+    subcategory: 'Rare Find',
+    rarity: 'Uncommon',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Damaged personal journal'
+  },
+  {
+    id: 'envelope',
+    name: 'Envelope',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Paper envelope'
+  },
+  {
+    id: 'flowerpot',
+    name: 'Flowerpot',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Common',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Plant container'
+  },
+  {
+    id: 'garden_shears',
+    name: 'Garden Shears',
+    category: 'Material',
+    subcategory: 'Raw Material',
+    rarity: 'Uncommon',
+    tags: ['Houseware'],
+    dropFloors: ['1F', '2F'],
+    description: 'Gardening cutting tool'
   }
 ];
 
@@ -682,16 +1083,16 @@ export const floorLootPools: FloorLootPool[] = [
   {
     floor: '1F',
     floorName: 'SHOPPING CENTER A',
-    primaryTags: [],
-    commonItems: [],
-    description: 'Configure loot tags for this floor'
+    primaryTags: ['Houseware'],
+    commonItems: ['water_based_marker', 'detergent', 'mold_remover', 'bleach', 'hanger', 'chalk', 'file_folder', 'pencil', 'diary', 'document', 'scissors', 'toilet_paper', 'shampoo', 'conditioner', 'body_wash', 'toothbrush', 'toothpaste', 'soap', 'box_cutter', 'packing_tape', 'black_market_ledger', 'torn_diary', 'envelope', 'flowerpot', 'garden_shears'],
+    description: 'Shopping center with household items, cleaning supplies, and everyday goods'
   },
   {
     floor: '2F',
     floorName: 'SHOPPING CENTER B',
-    primaryTags: [],
-    commonItems: [],
-    description: 'Configure loot tags for this floor'
+    primaryTags: ['Houseware'],
+    commonItems: ['water_based_marker', 'detergent', 'mold_remover', 'bleach', 'hanger', 'chalk', 'file_folder', 'pencil', 'diary', 'document', 'scissors', 'toilet_paper', 'shampoo', 'conditioner', 'body_wash', 'toothbrush', 'toothpaste', 'soap', 'box_cutter', 'packing_tape', 'black_market_ledger', 'torn_diary', 'envelope', 'flowerpot', 'garden_shears'],
+    description: 'Shopping center with household items, cleaning supplies, and everyday goods'
   },
   {
     floor: '3F',
@@ -703,9 +1104,9 @@ export const floorLootPools: FloorLootPool[] = [
   {
     floor: '4F',
     floorName: 'BROADCASTING STATION',
-    primaryTags: [],
-    commonItems: [],
-    description: 'Configure loot tags for this floor'
+    primaryTags: ['Electronics', 'Beauty', 'Boss'],
+    commonItems: ['electronic_scrap', 'payment_terminal', 'electrical_wire', 'electric_drill', 'stand_microphone', 'headset', 'microphone', 'camera', 'golden_microphone', 'blueprints', 'lipstick', 'perfume', 'bb_cream', 'skin_care_cream'],
+    description: 'Broadcasting station with electronics, beauty products, and boss spawns'
   },
   {
     floor: '5F',
@@ -717,9 +1118,9 @@ export const floorLootPools: FloorLootPool[] = [
   {
     floor: '6F',
     floorName: 'OFFICE',
-    primaryTags: [],
-    commonItems: [],
-    description: 'Configure loot tags for this floor'
+    primaryTags: ['Electronics'],
+    commonItems: ['electronic_scrap', 'payment_terminal', 'electrical_wire', 'electric_drill', 'stand_microphone', 'headset', 'microphone', 'camera', 'golden_microphone', 'blueprints'],
+    description: 'Office floor with electronics, audio equipment, and valuable tech items'
   },
   {
     floor: '7F',
@@ -738,9 +1139,9 @@ export const floorLootPools: FloorLootPool[] = [
   {
     floor: '9F',
     floorName: 'BROADCASTING STATION',
-    primaryTags: [],
-    commonItems: [],
-    description: 'Configure loot tags for this floor'
+    primaryTags: ['Electronics', 'Beauty', 'Boss'],
+    commonItems: ['electronic_scrap', 'payment_terminal', 'electrical_wire', 'electric_drill', 'stand_microphone', 'headset', 'microphone', 'camera', 'golden_microphone', 'blueprints', 'lipstick', 'perfume', 'bb_cream', 'skin_care_cream'],
+    description: 'Broadcasting station with electronics, beauty products, and boss spawns'
   },
   {
     floor: '10F',
@@ -773,9 +1174,9 @@ export const floorLootPools: FloorLootPool[] = [
   {
     floor: '14F',
     floorName: 'HOTEL GUEST FLOOR',
-    primaryTags: [],
+    primaryTags: ['Safes', 'High Value Floor'],
     commonItems: [],
-    description: 'Configure loot tags for this floor'
+    description: 'Hotel guest floor with safes containing valuable loot'
   },
   {
     floor: '15F',

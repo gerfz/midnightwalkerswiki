@@ -6,7 +6,8 @@
       "Bash(npx create-next-app@latest:*)",
       "Bash(npm init -y)",
       "Bash(npm install)",
-      "Read(//mnt/c/Users/PC/Downloads/**)"
+      "Read(//mnt/c/Users/PC/Downloads/**)",
+      "Bash(cp:*)"
     ],
     "deny": [],
     "ask": []
