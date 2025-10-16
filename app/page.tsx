@@ -367,8 +367,6 @@ export default function Home() {
                                   colorClasses = 'bg-red-600/20 text-red-400 border-red-600/30';
                                 } else if (tag === 'Safes') {
                                   colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
-                                } else if (tag === 'Safes') {
-                                  colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
                                 }
 
                                 return (
@@ -530,8 +528,6 @@ export default function Home() {
                                   colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
                                 } else if (tag === 'Boss') {
                                   colorClasses = 'bg-red-600/20 text-red-400 border-red-600/30';
-                                } else if (tag === 'Safes') {
-                                  colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
                                 } else if (tag === 'Safes') {
                                   colorClasses = 'bg-amber-600/20 text-amber-400 border-amber-600/30';
                                 }
