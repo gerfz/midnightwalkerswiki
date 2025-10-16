@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:store.steampowered.com)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm init -y)",
+      "Bash(npm install)",
+      "Read(//mnt/c/Users/PC/Downloads/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
